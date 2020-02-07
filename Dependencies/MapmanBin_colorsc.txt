@@ -1,0 +1,31 @@
+Bin number	Bin name	Shape	Colour
+0	Guide Gene	vee	Gold
+1	Photosynthesis	circle	DarkGreen
+2	Cellular Respiration	circle	Crimson
+3	Carbohydrate Metabolism	circle	NavajoWhite
+4	Amino Acid Metabolism	circle	Purple
+5	Lipid Metabolism	circle	Yellow
+6	Nucleotide Metabolism	circle	Fuchsia
+7	Coenzyme Metabolism	square	Salmon
+8	Polyamine Metabolism	square	RosyBrown
+9	Secondary Metabolism	square	Lime
+10	Redox Homeostasis	diamond	Red
+11	Phytohormone Action	diamond	DarkOrchid
+12	Chromatin Organisation	diamond	DodgerBlue
+13	Cell Cycle Organisation	diamond	MediumSeaGreen
+14	DNA Damage Response	hexagon	DarkRed
+15	RNA Biosynthesis	hexagon	OliveDrab
+16	RNA Processing	hexagon	RoyalBlue
+17	Protein Biosynthesis	square	MidnightBlue
+18	Protein Modification	square	Pink
+19	Protein Homeostasis	square	Khaki
+20	Cytoskeleton Organisation	diamond	HotPink
+21	Cell Wall Organisation	diamond	SpringGreen
+22	Vesicle Trafficking	octagon	GreenYellow
+23	Protein Translocation	octagon	Indigo
+24	Solute Transport	octagon	DarkTurquoise
+25	Nutrient Uptake	octagon	LightGreen
+26	External Stimuli Response	octagon	FireBrick
+27	Multi-Process Regulation	triangle	LightSkyBlue
+35	Not Assigned	triangle	Silver
+50	Enzyme Classification	triangle	DeepPink
