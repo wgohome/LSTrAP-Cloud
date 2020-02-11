@@ -1,0 +1,3 @@
+BINCODE	NAME	IDENTIFIER	DESCRIPTION	TYPE
+'n/a'	'n/a'	'gene1'	'description1'	T
+'n/a'	'n/a'	'gene2'	'description2'	T
