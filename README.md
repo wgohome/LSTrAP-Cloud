@@ -1,8 +1,88 @@
 # LSTrAP-Cloud
-Co-expression Network on Google Colaboratory. 
-
+Large-Scale Transcriptome Analysis Pipeline on Cloud  
 This repository is built upon [wirriamm/CoNeGC](https://github.com/wirriamm/CoNeGC)
 
-1 Download Scripts
+If you use LSTrAP-Cloud in your research, please cite:  
+<b>LSTrAP-Cloud: A user-friendly cloud computing pipeline to infer co-functional and regulatory networks</b>. Tan, Goh and Mutwil, 2020. (https://doi.org/10.xxxx)
 
-2 Script to generate Coexpression Network
+## What is LSTrAP-Cloud?
+
+LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA-seq data (fastq files from <a href="https://www.ebi.ac.uk/ena">ENA</a>) on Goolge Colaboratory (Colab). Leveraging on the user-friendliness of the Colab interface, LSTrAP-Cloud allows users to analyse large scale transcriptome data without having to access the linux terminal, making it accessible to both bioinformaticians and biologist. To get started, we have provided a tutorial based on example data found [here](sample_data). While the pipeline was designed for plants, we have also made the script compatible with non-plant organisms. 
+
+## Changelog
+
+## Tutorial sections
+  1. [Preparation of Google Drive Account](#1-preparation-of-google-drive-account)
+  2. [Setting up Google Colaboratory](#2-setting-up-google-colaboratory)  
+  3. [Streaming RNA-seq data](#3-streaming-rna-seq-data)
+  4. [Generating Neighbourhood and Network Files](#4-generating-neighbourhood-and-network-files)  
+
+Feel free to <a href="mailto:qiaowen001@e.ntu.edu.sg">contact us</a> if you have further questions.
+
+## Acknowledgements
+LSTrAP-Cloud will not have been possible without the various open-source projects.
+
+## Contact
+Issues and feedback can be submitted through GitHub or to <a href="https://www.plant.tools/team---qiao-wen.html">Qiao Wen Tan</a>.
+
+## Tutorial
+### 1. Preparation of Google Drive Account
+Please ensure sufficient storage space of more than 1 GB. Space requirement varies with the organism and number of experiments you wish to analyse.
+
+With your Google Drive account, create the a directory containing the following files:
+
+| File | Remarks |
+|:--- |:--- |
+| runid.txt | Contains list of RunIDs to be streamed from ENA. Example [here](examples/) |
+| CDS.fastq | CDS file of the organism RNA-seq experiments are to be mapped to. gz compressed files are also accepted. The CDS of *N. tabacum* (Nitab-v4.5_cDNA_Edwards2017.fasta) can be downloaded at [SolGenomics](https://solgenomics.net/) |
+
+### 2. Setting up Google Colaboratory
+#### Opening the pipeline on Google Colab
+There are two ways to open the [notebook](1_download.ipynb).  
+<strong>Method 1: Opening in [Colab](https://colab.research.google.com/)</strong> (File > Open Notebook > GitHub)
+![Opening on Colab](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/colab_git.png?raw=true)
+Figure 1: Opening the notebook on Google Colab  
+<strong>Method 2: Opening through the [LSTrAP-Cloud repository](https://github.com/tqiaowen/LSTrAP-Cloud)</strong> (Click on 'Open in Colab')
+![Opening through GitHub](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/git_colab.png?raw=true)
+Figure 2. Opening the notebook through GitHub
+
+#### 2.2 Running code in cells
+A cell can be run by clicking on the play button at the top left of each cell. The following options can be used to run multiple cells by clicking from the menu bar, or by hotkeys as specified in parentheses:
+  * Runtime > Run all (Crtl+F9): Runs all cells in the notebook
+  * Runtime > Run before (Crtl+F8): Runs all cells before the cell in focus
+  * Runtime > Run after (Crtl+F10): Runs all cells after the cell in focus
+ Tip: To prevent the notebook from going idle while the script is running, a javascript code can be implemented in the web browser. Open the browser's javascript console and paste the following code and hit enter:  
+ 
+ ```javascript
+function ClickConnect(){
+console.log("Working"); 
+document.querySelector("colab-toolbar-button#connect").click() 
+}
+setInterval(ClickConnect,60000)
+```
+#### 2.3. Connecting to your Google Drive account
+To connect your Google Drive account to Colab, run the first cell (Cells 1.1 and 2.1 for 1_download.ipynb and 2_network.ipynb) and enter the authorisation code.
+![Mounting Google Drive](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/mount.png?raw=true)
+After mounting your Google Drive, do save a copy of the notebook to your drive (File > Save a copy in Drive)!
+
+### 3. Streaming RNA-seq data
+Before running the rest of the cells, the notebook requires some information to be filled up under cells 1.2. After filling up the cell, the rest of the cells can be executed.
+<strong>Note!</strong>
+  * Include file extensions (eg. '.txt', '.tsv') in the file names
+  * Ensure that files are already saved in the Google Drive folder specified
+  * Avoid any whitespace in file names
+  * For new download, select 'A. Start fresh run'. The date initiated section can be ignored
+  * To continue from previous download due to disconnected runtime (can happen when attempting to download large amounts of experiments), select 'B. Continue with previous run' and select the date when the download was initiated.
+![Input of variables](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/input.png?raw=true)  
+
+Expected outputs
+| File | Remarks |
+|:--- |:--- |
+| index_file | Index file created by `kallisto index` based on the CDS provided |
+| Kallisto output folders | Folders containing outputs generated by `kallisto quant` |
+| Download_report.txt | Tab separated file summarising the status of download, amount of data downloaded, amount of time taken for kallisto streaming and a statistics from kallisto for each RunID. The file can be opened in Microsoft Excel. |
+### 4. Generating Neighbourhood and Network Files
+This part of the tutorial will require you to use the [second notebook](2_network.ipynb). Refer to section [2.1 Opening the pipeline on Google Colab](#opening-the-pipeline-on-google-colab)
+#### 4.1 User input of variables
+#### 4.2 Quality control of samples
+#### 4.3 Setting the threshold for acceptable RunIDs
