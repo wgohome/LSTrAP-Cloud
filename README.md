@@ -46,11 +46,9 @@ With your Google Drive account, create the a directory containing the following 
 #### 2.1 Opening the pipeline on Google Colab
 There are two ways to open the [notebook](1_download.ipynb).  
 <strong>Method 1: Opening in [Colab](https://colab.research.google.com/)</strong> (File > Open Notebook > GitHub)
-![Opening on Colab](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/colab_git.png?raw=true)
-Figure 1: Opening the notebook on Google Colab  
+![Opening on Colab](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/colab_git.png?raw=true)  
 <strong>Method 2: Opening through the [LSTrAP-Cloud repository](https://github.com/tqiaowen/LSTrAP-Cloud)</strong> (Click on 'Open in Colab')
 ![Opening through GitHub](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/git_colab.png?raw=true)
-Figure 2. Opening the notebook through GitHub
 
 #### 2.2 Running code in cells
 A cell can be run by clicking on the play button at the top left of each cell. The following options can be used to run multiple cells by clicking from the menu bar, or by hotkeys as specified in parentheses:
@@ -90,14 +88,25 @@ Expected outputs
 ### 4. Generating Neighbourhood and Network Files
 This part of the tutorial will require you to use the [second notebook](2_network.ipynb). Refer to section [2.1 Opening the pipeline on Google Colab](#21-opening-the-pipeline-on-google-colab) on how to do it. Do save a copy of the script to your Google Drive account after [mounting your google drive](#23-connecting-to-your-google-drive-account).
 
+Expected outputs
+| File | Remarks |
+|:--- |:--- |
+| tpm.txt | Gene expression matrix generated based on the threshold provided |
+| neighbourhood_file.txt | Contains information about the neighbourhood of the gene of interest such as geneID, PCC value and descriptions from mercator |
+| network_file.txt | Contains information between gene pairs and their corresponding PCC values. Compatible with cytoscape desktop |
+| gene_network.html | This file can be open standalone in a brower (tested on Chrome) and is the same file used to display the network in this notebook. |
+
 #### 4.1 User input of variables
 Similar to section [3. Streaming RNA-seq data](#3-streaming-rna-seq-data), the fields in cell 2.2 should be filled with the respective directory or file paths which can be easily obtained by a right click on the directory/file and selecting 'Copy path'.
-![Copy paths](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/colabpaths.png?raw=true). After filling up cell 2.2, run cells 2.2 to 2.6 to display the 1uality control table and scatter plots.
+![Copy paths](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/colabpaths.png?raw=true)  
+
+After filling up cell 2.2, run cells 2.2 to 2.6 to display the quality control table and scatter plots.
 
 <strong>Note!</strong>  
   * If you are using a non-plant organism, please provide a file based on the [mercator format](examples/mercator_non-plant.txt). Gene identifiers should be in <strong>lowercase</strong>.
   * The gene identifier provided in the last field should be identical to that of the CDS file
 
 #### 4.2 Quality control of samples
-
+After reviewing the quality control table and scatter plots, adjust the sliders in '2.7 Determine Quality Control Cutoff' to select the desired threshold levels.
+![Quality control](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/qc.png?raw=true)  
 #### 4.3 Setting the threshold for acceptable RunIDs
