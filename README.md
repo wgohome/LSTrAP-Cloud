@@ -12,10 +12,16 @@ LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA
 ## Changelog
 
 ## Tutorial sections
-  1. [Preparation of Google Drive Account](#1-preparation-of-google-drive-account)
+  1. [Preparation of Google Drive Account](#1-preparation-of-google-drive-account)  
   2. [Setting up Google Colaboratory](#2-setting-up-google-colaboratory)  
+    2.1 [Opening the pipeline on Google Colab](#21-opening-the-pipeline-on-google-colab)  
+    2.2 [Running code in Cells](#22-running-code-in-cells)  
+    2.3 [Connecting to your Google Drive account](#23-connecting-to-your-goolge-drive-account)  
   3. [Streaming RNA-seq data](#3-streaming-rna-seq-data)
   4. [Generating Neighbourhood and Network Files](#4-generating-neighbourhood-and-network-files)  
+    4.1 [User input of variables](#41-user-input-of-variables)  
+    4.2 [Quality control of samples](#42-quality-control-of-samples)  
+    4.3 [Setting the threshold for acceptable RunIDs](#43-setting-the-threshold-for-acceptable-runids)  
 
 Feel free to <a href="mailto:qiaowen001@e.ntu.edu.sg">contact us</a> if you have further questions.
 
@@ -60,7 +66,7 @@ document.querySelector("colab-toolbar-button#connect").click()
 }
 setInterval(ClickConnect,60000)
 ```
-#### 2.3. Connecting to your Google Drive account
+#### 2.3 Connecting to your Google Drive account
 To connect your Google Drive account to Colab, run the first cell (Cells 1.1 and 2.1 for 1_download.ipynb and 2_network.ipynb) and enter the authorisation code.
 ![Mounting Google Drive](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/mount.png?raw=true)
 After mounting your Google Drive, do save a copy of the notebook to your drive (File > Save a copy in Drive)!
