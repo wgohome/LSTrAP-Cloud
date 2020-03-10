@@ -7,7 +7,7 @@ If you use LSTrAP-Cloud in your research, please cite:
 
 ## What is LSTrAP-Cloud?
 
-LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA-seq data (fastq files from <a href="https://www.ebi.ac.uk/ena">ENA</a>) on Goolge Colaboratory (Colab). Leveraging on the user-friendliness of the Colab interface, LSTrAP-Cloud allows users to analyse large scale transcriptome data without having to access the linux terminal, making it accessible to both bioinformaticians and biologist. To get started, we have provided a tutorial based on example data found [here](sample_data). While the pipeline was designed for plants, we have also made the script compatible with non-plant organisms. 
+LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA-seq data (fastq files from <a href="https://www.ebi.ac.uk/ena">ENA</a>) on Goolge Colaboratory (Colab). Leveraging on the user-friendliness of the Colab interface, LSTrAP-Cloud allows users to analyse large scale transcriptome data without having to access the linux terminal, making it accessible to both bioinformaticians and biologist. To get started, we have provided a tutorial based on example data found [here](examples). While the pipeline was designed for plants, we have also made the script compatible with non-plant organisms. 
 
 ## Changelog
 
